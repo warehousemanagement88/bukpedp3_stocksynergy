@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="../../../assets/img/apple-icon.png"
+    />
+    <link rel="icon" type="image/png" href="../../../assets/img/favicon.png" />
+    <title>Inventory Management Warehouse</title>
+    <!-- Fonts and icons -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <script
+      src="https://kit.fontawesome.com/42d5adcbca.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Nucleo Icons -->
+    <link href="../../../assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="../../../assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Main Styling -->
+    <link
+      href="../../../assets/css/soft-ui-dashboard-tailwind.css?v=1.0.5"
+      rel="stylesheet"
+    />
+
+    <!-- Nepcha Analytics (nepcha.com) -->
+    <!-- Nepcha is a easy-to-use web analytics. No cookies and fully compliant with GDPR, CCPA and PECR. -->
+    <script
+      defer
+      data-site="YOUR_DOMAIN_HERE"
+      src="https://api.nepcha.com/js/nepcha-analytics.js"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  </head>
+
+  <body
+    class="m-0 font-sans antialiased font-normal bg-gray-200 text-start text-base leading-default text-slate-500"
+  >
+    <!-- Navbar -->
+    <nav
+      class="absolute top-0 z-30 flex flex-wrap items-center justify-between w-full px-4 py-2 mt-6 mb-4 shadow-none lg:flex-nowrap lg:justify-start"
+    >
+      <div
+        class="container flex items-center justify-between py-0 flex-wrap-inherit"
+      >
+        <a
+          class="py-2.375 text-sm mr-4 ml-4 whitespace-nowrap font-bold text-white lg:ml-0"
+          href="../../../pages/admin/dashboard.html"
+        >
+          Inventory Management Warehouse
+        </a>
+        <button
+          navbar-trigger
+          class="px-3 py-1 ml-2 leading-none transition-all bg-transparent border border-transparent border-solid rounded-lg shadow-none cursor-pointer text-lg ease-soft-in-out lg:hidden"
+          type="button"
+          aria-controls="navigation"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span
+            class="inline-block mt-2 align-middle bg-center bg-no-repeat bg-cover w-6 h-6 bg-none"
+          >
+            <span
+              bar1
+              class="w-5.5 rounded-xs duration-350 relative my-0 mx-auto block h-px bg-white transition-all"
+            ></span>
+            <span
+              bar2
+              class="w-5.5 rounded-xs mt-1.75 duration-350 relative my-0 mx-auto block h-px bg-white transition-all"
+            ></span>
+            <span
+              bar3
+              class="w-5.5 rounded-xs mt-1.75 duration-350 relative my-0 mx-auto block h-px bg-white transition-all"
+            ></span>
+          </span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="mt-0 transition-all duration-200 ease-soft-in-out">
+      <section class="min-h-screen mb-32 bg-gray-200">
+        <div
+          class="relative flex items-start pt-12 pb-56 m-4 overflow-hidden bg-center bg-cover min-h-50-screen rounded-xl"
+          style="
+            background-image: url('../../../assets/img/curved-images/curved14.jpg');
+          "
+        >
+          <span
+            class="absolute top-0 left-0 w-full h-full bg-center bg-cover bg-gradient-to-tl from-gray-900 to-slate-800 opacity-60"
+          ></span>
+          <div class="container z-10">
+            <div class="flex flex-wrap justify-center -mx-3">
+              <div
+                class="w-full max-w-full px-3 mx-auto mt-0 text-center lg:flex-0 shrink-0 lg:w-5/12"
+              >
+                <h1 class="mt-12 mb-2 text-white">Welcome!</h1>
+                <p class="text-white">Edit Your Inventory.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="flex flex-wrap -mx-3 -mt-48 md:-mt-56 lg:-mt-48">
+            <div class="w-full max-w-full px-3 mx-auto">
+              <div
+                class="relative z-0 flex flex-col min-w-0 break-words bg-white border-0 shadow-blur rounded-2xl bg-clip-border shadow-lg"
+              >
+                <div
+                  class="p-6 mb-0 text-center bg-white border-b-0 rounded-t-2xl"
+                >
+                  <h5>Edit Warehouse A</h5>
+                </div>
+                <div class="flex flex-wrap px-3 -mx-3 sm:px-6 xl:px-12">
+                  <div class="w-3/12 max-w-full px-1 ml-auto flex-0"></div>
+                </div>
+                <div class="flex-auto p-6">
+                  <div>
+                    <div class="mb-4">
+                      <span class="text-gray-700 dark:text-gray-400">Name</span>
+                      <input
+                        type="text"
+                        class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                        placeholder="Name"
+                        aria-label="Name"
+                        aria-describedby="name-addon"
+                        id="name"
+                      />
+                    </div>
+                    <div class="mb-4">
+                      <span class="text-gray-700 dark:text-gray-400"
+                        >Category</span
+                      >
+                      <input
+                        type="text"
+                        class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                        placeholder="Category"
+                        aria-label="Category"
+                        aria-describedby="category-addon"
+                        id="category"
+                      />
+                    </div>
+                    <div class="mb-4">
+                      <span class="text-gray-700 dark:text-gray-400">QTY</span>
+                      <input
+                        type="text"
+                        class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                        placeholder="QTY"
+                        aria-label="QTY"
+                        aria-describedby="qty-addon"
+                        id="qty"
+                      />
+                    </div>
+                    <div class="mb-4">
+                      <span class="text-gray-700 dark:text-gray-400">SKU</span>
+                      <input
+                        type="text"
+                        class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                        placeholder="SKU"
+                        aria-label="SKU"
+                        aria-describedby="sku-addon"
+                        id="sku"
+                      />
+                    </div>
+                    <div class="mb-4">
+                      <span class="text-gray-700 dark:text-gray-400"
+                        >Selling Price</span
+                      >
+                      <input
+                        type="text"
+                        class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                        placeholder="Selling Price"
+                        aria-label="SellingPrice"
+                        aria-describedby="sellingprice-addon"
+                        id="sellingprice"
+                      />
+                    </div>
+                    <div class="mb-4">
+                      <span class="text-gray-700 dark:text-gray-400"
+                        >Original Price</span
+                      >
+                      <input
+                        type="text"
+                        class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                        placeholder="Original Price"
+                        aria-label="OriginalPrice"
+                        aria-describedby="originalprice-addon"
+                        id="originalprice"
+                      />
+                    </div>
+                    <div class="mb-4">
+                      <span class="text-gray-700 dark:text-gray-400"
+                        >Availability</span
+                      >
+                      <input
+                        type="text"
+                        class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                        placeholder="Availability"
+                        aria-label="Availability"
+                        aria-describedby="availability-addon"
+                        id="availability"
+                      />
+                    </div>
+                    <div class="mb-4">
+                      <span class="text-gray-700 dark:text-gray-400"
+                        >Color</span
+                      >
+                      <input
+                        type="text"
+                        class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                        placeholder="Color"
+                        aria-label="Color"
+                        aria-describedby="color-addon"
+                        id="color"
+                      />
+                    </div>
+                    <div class="mb-4">
+                      <span class="text-gray-700 dark:text-gray-400"
+                        >Breadcrumbs</span
+                      >
+                      <input
+                        type="text"
+                        class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                        placeholder="Breadcrumbs"
+                        aria-label="Breadcrumbs"
+                        aria-describedby="breadcrumbs-addon"
+                        id="breadcrumbs"
+                      />
+                    </div>
+                    <div class="mb-4">
+                      <span class="text-gray-700 dark:text-gray-400"
+                        >Brand</span
+                      >
+                      <input
+                        type="text"
+                        class="text-sm focus:shadow-soft-primary-outline leading-5.6 ease-soft block w-full appearance-none rounded-lg border border-solid border-gray-300 bg-white bg-clip-padding py-2 px-3 font-normal text-gray-700 transition-all focus:border-fuchsia-300 focus:bg-white focus:text-gray-700 focus:outline-none focus:transition-shadow"
+                        placeholder="Brand"
+                        aria-label="Brand"
+                        aria-describedby="brand-addon"
+                        id="brand"
+                      />
+                    </div>
+
+                    <div class="text-center">
+                      <button
+                        type="submit"
+                        id="updateButton"
+                        class="inline-block px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-900 to-slate-800 hover:border-slate-700 hover:bg-slate-700 hover:text-white"
+                      >
+                        Edit
+                      </button>
+                      <button
+                        type="button"
+                        class="inline-block px-6 py-3 mt-6 mb-2 font-bold text-center text-white uppercase align-middle transition-all bg-transparent border-0 rounded-lg cursor-pointer active:opacity-85 hover:scale-102 hover:shadow-soft-xs leading-pro text-xs ease-soft-in tracking-tight-soft shadow-soft-md bg-150 bg-x-25 bg-gradient-to-tl from-gray-900 to-slate-800 hover:border-slate-700 hover:bg-slate-700 hover:text-white"
+                        onclick="location.href='tables_GudangA.html'"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+  <!-- plugin for scrollbar  -->
+  <!-- <script
+    src="../../../assets/js/plugins/perfect-scrollbar.min.js"
+    async
+  ></script> -->
+  <!-- main script file  -->
+  <!-- <script
+    src="../../../assets/js/soft-ui-dashboard-tailwind.js?v=1.0.5"
+    async
+  ></script> -->
+  <script
+    type="module"
+    src="./assets/js/updateFunction/updateGudangA.js"
+  ></script>
+  <script
+    type="module"
+    src="./assets/js/updateFunction/fetchEditGudangA.js"
+  ></script>
+</html>

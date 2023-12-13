@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>404 - Page Not Found</title>
+    <style>
+      body {
+        background: linear-gradient(135deg, #e74c3c, #8e44ad);
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+        color: #fff;
+      }
+
+      .container {
+        max-width: 600px;
+        background: rgba(255, 255, 255, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        transition: background 0.5s; /* Transisi warna latar belakang container */
+      }
+
+      h1 {
+        font-size: 5em;
+        margin: 0;
+        transition: color 0.5s; /* Transisi warna teks */
+      }
+
+      p {
+        font-size: 1.2em;
+        color: #ecf0f1; /* Warna abu-abu tua */
+        transition: color 0.5s; /* Transisi warna teks */
+      }
+
+      .icon-hologram-404 {
+        font-size: 3em;
+        animation: rotate 1.5s infinite linear;
+        transition: color 0.5s; /* Transisi warna ikon hologram */
+      }
+
+      /* Add some animation to the hologram icon */
+      @keyframes rotate {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+
+      /* Style the Go Home button */
+      .go-home-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 1em;
+        background: #f42121;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 20px;
+        transition: background 0.1s; /* Transisi warna latar belakang tombol */
+      }
+
+      .go-home-button:hover {
+        background: #d41c1c; /* Ganti warna latar belakang tombol pada hover */
+      }
+
+      /* Hover effect for the hologram icon */
+      .icon-hologram-404:hover {
+        color: #f42121; /* Ganti warna ikon hologram pada hover */
+        font-size: 7em; /* Ukuran teks untuk teks "⚠" */
+        margin: 0; /* Hapus margin pada teks "⚠" */
+      }
+
+      /* Hover effect for the entire container */
+      .container:hover {
+        background: rgba(
+          255,
+          255,
+          255,
+          0.9
+        ); /* Ganti warna latar belakang container pada hover */
+      }
+
+      .container:hover h1,
+      .container:hover p {
+        color: #f42121; /* Ganti warna teks pada hover */
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>404</h1>
+      <p>Oops! The page you are looking for is lost in the warehouse.</p>
+      <p class="icon-hologram-404 font-size-5em">⚠</p>
+      <!-- Hologram Unicode Character for 404 -->
+      <p>Don't worry, our team is searching high and low for it!</p>
+      <a href="build/pages/sign-in.html" class="go-home-button">Go Sign In</a>
+    </div>
+  </body>
+</html>

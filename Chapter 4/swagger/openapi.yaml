@@ -1,0 +1,639 @@
+openapi: 3.0.3
+info:
+  title: Dokumen API Cloud Function - OpenAPI 3.0
+  description: >-
+    Dokumen API Cloud Function Aplikasi Inventory Management Warehouse
+  termsOfService: https://github.com/warehousemanagement88/swagger
+  contact:
+    email: ramadhanialnovianti@gmail.com
+  license:
+    name: Warehouse Package
+    url: https://pkg.go.dev/github.com/warehousemanagement88/be_warehouse
+  version: 1.0.11
+externalDocs:
+  description: Repo GCF
+  url: https://warehousemanagement88.github.io/gcf/
+servers:
+  - url: https://asia-southeast2-warehousemanagement88.cloudfunctions.net
+tags:
+  - name: User
+    description: Data User
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://warehousemanagement88.github.io/gcf/user/
+  - name: Auth
+    description: Auth to Access to API
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://warehousemanagement88.github.io/gcf/login/
+  - name: Staff
+    description: Staff to Access to API
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://warehousemanagement88.github.io/gcf/staff/
+  - name: Gudang A
+    description: Gudang A to Access to API
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://warehousemanagement88.github.io/gcf/gudanga/
+  - name: Gudang B
+    description: Gudang B to Access to API
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://warehousemanagement88.github.io/gcf/gudangb/
+  - name: Gudang C
+    description: Gudang C to Access to API
+    externalDocs:
+      description: Deskripsi dan Kode Program
+      url: https://warehousemanagement88.github.io/gcf/gudangc/
+paths:
+  /warehouse_user:
+    get:
+      tags:
+        - User
+      summary: Get All User
+      description: List Data User
+      operationId: getUserJSON
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/User"
+        "400":
+          description: Invalid status value
+  /warehouse_login:
+    post:
+      tags:
+        - Auth
+      summary: Login get Token
+      description: Login and Get User Token
+      operationId: authService
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Login"
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/AuthResponse"
+        "405":
+          description: Invalid input
+      security:
+        - token: []
+  /warehouse_staff/{staffId}:
+    get:
+      tags:
+        - Staff
+      summary: Get Staff by ID
+      description: Get a Staff by its ID
+      operationId: getStaffById
+      parameters:
+        - name: staffId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the Staff
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Staff"
+        "404":
+          description: Staff not found
+      security:
+        - token: []
+    put:
+      tags:
+        - Staff
+      summary: Update Staff
+      description: Update an existing Staff
+      operationId: updateStaff
+      parameters:
+        - name: staffId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the Staff
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Staff"
+      responses:
+        "200":
+          description: Staff updated successfully
+        "404":
+          description: Staff not found
+      security:
+        - token: []
+  /warehouse_gudanga:
+    get:
+      tags:
+        - Gudang A
+      summary: Get All GudangA
+      description: List Data GudangA
+      operationId: getAllGudangA
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GudangAArray"
+      security:
+        - token: []
+    post:
+      tags:
+        - Gudang A
+      summary: Create GudangA
+      description: Create a new GudangA
+      operationId: createGudangA
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GudangA"
+      responses:
+        "201":
+          description: GudangA created successfully
+        "400":
+          description: Invalid input
+      security:
+        - token: []
+  /warehouse_gudanga?id={gudangaId}:
+    get:
+      tags:
+        - Gudang A
+      summary: Get GudangA by ID
+      description: Get a GudangA by its ID
+      operationId: getGudangAById
+      parameters:
+        - name: gudangaId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the GudangA
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GudangA"
+        "404":
+          description: GudangA not found
+      security:
+        - token: []
+    put:
+      tags:
+        - Gudang A
+      summary: Update GudangA
+      description: Update an existing GudangA
+      operationId: updateGudangA
+      parameters:
+        - name: gudangaId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the GudangA
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GudangA"
+      responses:
+        "200":
+          description: GudangA updated successfully
+        "404":
+          description: GudangA not found
+      security:
+        - token: []
+    delete:
+      tags:
+        - Gudang A
+      summary: Delete GudangA
+      description: Delete an existing GudangA
+      operationId: deleteGudangA
+      parameters:
+        - name: gudangaId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the GudangA
+      responses:
+        "200":
+          description: GudangA deleted successfully
+        "404":
+          description: GudangA not found
+      security:
+        - token: []
+  /warehouse_gudangb:
+    get:
+      tags:
+        - Gudang B
+      summary: Get All GudangB
+      description: List Data GudangB
+      operationId: getAllGudangB
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GudangBArray"
+      security:
+        - token: []
+    post:
+      tags:
+        - Gudang B
+      summary: Create GudangB
+      description: Create a new GudangB
+      operationId: createGudangB
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GudangB"
+      responses:
+        "201":
+          description: GudangB created successfully
+        "400":
+          description: Invalid input
+      security:
+        - token: []
+  /warehouse_gudangb/{gudangbId}:
+    get:
+      tags:
+        - Gudang B
+      summary: Get GudangB by ID
+      description: Get a GudangB by its ID
+      operationId: getGudangBById
+      parameters:
+        - name: gudangbId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the GudangB
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GudangB"
+        "404":
+          description: GudangB not found
+      security:
+        - token: []
+    put:
+      tags:
+        - Gudang B
+      summary: Update GudangB
+      description: Update an existing GudangB
+      operationId: updateGudangB
+      parameters:
+        - name: gudangbId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the GudangB
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GudangB"
+      responses:
+        "200":
+          description: GudangB updated successfully
+        "404":
+          description: GudangB not found
+      security:
+        - token: []
+    delete:
+      tags:
+        - Gudang B
+      summary: Delete GudangB
+      description: Delete an existing GudangB
+      operationId: deleteGudangB
+      parameters:
+        - name: gudangbId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the GudangB
+      responses:
+        "200":
+          description: GudangB deleted successfully
+        "404":
+          description: GudangB not found
+      security:
+        - token: []
+  /warehouse_gudangc:
+    get:
+      tags:
+        - Gudang C
+      summary: Get AllGudangC
+      description: List DataGudangC
+      operationId: getAllGudangC
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GudangCArray"
+      security:
+        - token: []
+    post:
+      tags:
+        - Gudang C
+      summary: Create GudangC
+      description: Create a new GudangC
+      operationId: createGudangC
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GudangC"
+      responses:
+        "201":
+          description: GudangC created successfully
+        "400":
+          description: Invalid input
+      security:
+        - token: []
+  /warehouse_gudangc/{gudangcId}:
+    get:
+      tags:
+        - Gudang C
+      summary: Get GudangC by ID
+      description: Get a GudangC by its ID
+      operationId: getGudangCById
+      parameters:
+        - name: gudangcId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the GudangC
+      responses:
+        "200":
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/GudangC"
+        "404":
+          description: GudangC not found
+      security:
+        - token: []
+    put:
+      tags:
+        - Gudang C
+      summary: Update GudangC
+      description: Update an existing GudangC
+      operationId: updateGudangC
+      parameters:
+        - name: gudangcId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the GudangC
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GudangC"
+      responses:
+        "200":
+          description: GudangC updated successfully
+        "404":
+          description: GudangC not found
+      security:
+        - token: []
+    delete:
+      tags:
+        - Gudang C
+      summary: Delete GudangC
+      description: Delete an existing GudangC
+      operationId: deleteGudangC
+      parameters:
+        - name: gudangcId
+          in: path
+          required: true
+          schema:
+            type: string
+          description: ID of the GudangC
+      responses:
+        "200":
+          description: GudangC deleted successfully
+        "404":
+          description: GudangC not found
+      security:
+        - token: []
+
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        ID:
+          type: string
+          format: uuid
+        FirstName:
+          type: string
+        LastName:
+          type: string
+        Email:
+          type: string
+          format: email
+        Password:
+          type: string
+        Confirmpassword:
+          type: string
+        Salt:
+          type: string
+        Role:
+          type: string
+    Login:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          format: email
+        password:
+          type: string
+          format: password
+    Staff:
+      type: object
+      properties:
+        ID:
+          type: string
+          format: uuid
+        NamaLengkap:
+          type: string
+        Jabatan:
+          type: string
+        JenisKelamin:
+          type: string
+        Akun:
+          $ref: "#/components/schemas/User"
+    GudangA:
+      type: object
+      properties:
+        ID:
+          type: string
+          format: uuid
+        Brand:
+          type: string
+        Name:
+          type: string
+        Category:
+          type: string
+        QTY:
+          type: string
+        SKU:
+          type: string
+        SellingPrice:
+          type: string
+        OriginalPrice:
+          type: string
+        Availability:
+          type: string
+        Color:
+          type: string
+        Breadcrumbs:
+          type: string
+        Date:
+          type: string
+          format: date-time
+
+    GudangAArray:
+      type: array
+      items:
+        $ref: "#/components/schemas/GudangA"
+
+    GudangB:
+      type: object
+      properties:
+        ID:
+          type: string
+          format: uuid
+        Brand:
+          type: string
+        Name:
+          type: string
+        Category:
+          type: string
+        QTY:
+          type: string
+        SKU:
+          type: string
+        SellingPrice:
+          type: string
+        OriginalPrice:
+          type: string
+        Availability:
+          type: string
+        Color:
+          type: string
+        Breadcrumbs:
+          type: string
+        Date:
+          type: string
+          format: date-time
+
+    GudangBArray:
+      type: array
+      items:
+        $ref: "#/components/schemas/GudangB"
+
+    GudangC:
+      type: object
+      properties:
+        ID:
+          type: string
+          format: uuid
+        Brand:
+          type: string
+        Name:
+          type: string
+        Category:
+          type: string
+        QTY:
+          type: string
+        SKU:
+          type: string
+        SellingPrice:
+          type: string
+        OriginalPrice:
+          type: string
+        Availability:
+          type: string
+        Color:
+          type: string
+        Breadcrumbs:
+          type: string
+        Date:
+          type: string
+          format: date-time
+
+    GudangCArray:
+      type: array
+      items:
+        $ref: "#/components/schemas/GudangC"
+
+    AuthResponse:
+      type: object
+      properties:
+        status:
+          type: boolean
+        token:
+          type: string
+        message:
+          type: string
+        role:
+          type: string
+  requestBodies:
+    AuthReq:
+      description: Request Authentication
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Login"
+    UserArray:
+      description: List of user object
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/AuthResponse"
+
+  securitySchemes:
+    token:
+      type: apiKey
+      name: Authorization
+      in: header

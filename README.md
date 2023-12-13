@@ -1,0 +1,1 @@
+# bukpedp3_stocksynergy

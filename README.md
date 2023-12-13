@@ -10,11 +10,11 @@ Buku "Membangun Sistem Manajemen Stok Gudang Menggunakan Golang dan JavaScript" 
 
 **Penulis 1 :** Agita Nurfadillah. Lahir di Sukabumi, 10 Maret 2003. Saat ini adalah mahasiswa Semester 5 Program Studi D4 Teknik Informatika di Universitas Logistik dan Bisnis Internasional.
 
-![Agita](https://github.com/warehousemanagement88/bukpedp3_stocksynergy/assets/147298795/53389802-60d3-4ff0-8a24-0b066929c884)
+![Agita](https://github.com/warehousemanagement88/bukpedp3_stocksynergy/assets/147298795/5a0432a6-b908-4499-bfcd-3e75f913cf96)
 
 **Penulis 2 :** Al Novianti Ramadhani Sulaksono. Lahir di Tulungagung, 25 November 2002. Saat ini adalah mahasiswa Semester 5 Program Studi D4 Teknik Informatika di Universitas Logistik dan Bisnis Internasional.
 
-![Alnovi](https://github.com/warehousemanagement88/bukpedp3_stocksynergy/assets/147298795/b6740a9f-2dec-4bde-9b04-7e8242104d33)
+![Alnovi](https://github.com/warehousemanagement88/bukpedp3_stocksynergy/assets/147298795/13b298c2-f30a-44d8-859f-de54ef81f8a8)
 
 **Penulis 3 :** Syafrial Fachri Pane, S.T.,M.T.I.,EBDP. Lahir di Medan 16 April 1988. Lulus D3 di Program Studi Teknik Informatika Politeknik Pos Indonesia tahun 2009, lulus S1 di Program Studi Teknik Informatika Universitas Pasundan tahun 2013, dan lulus S2 di Teknik Informatika Universitas Bina Nusantara. Saat ini adalah dosen tetap Program Studi Teknik Informatika di Universitas Logistik dan Bisnis Internasional. Mengampu matakuliah Database I dan Database II. Aktif menulis di berbagai jurnal ilmiah. Bidang yang ditekuni adalah ilmu data. Saat ini sedang melanjutkan Pendidikan S3 di Telkom University.
 

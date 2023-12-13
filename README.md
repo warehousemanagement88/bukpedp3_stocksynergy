@@ -18,4 +18,4 @@ Buku "Membangun Sistem Manajemen Stok Gudang Menggunakan Golang dan JavaScript" 
 
 **Penulis 3 :** Syafrial Fachri Pane, S.T.,M.T.I.,EBDP. Lahir di Medan 16 April 1988. Lulus D3 di Program Studi Teknik Informatika Politeknik Pos Indonesia tahun 2009, lulus S1 di Program Studi Teknik Informatika Universitas Pasundan tahun 2013, dan lulus S2 di Teknik Informatika Universitas Bina Nusantara. Saat ini adalah dosen tetap Program Studi Teknik Informatika di Universitas Logistik dan Bisnis Internasional. Mengampu matakuliah Database I dan Database II. Aktif menulis di berbagai jurnal ilmiah. Bidang yang ditekuni adalah ilmu data. Saat ini sedang melanjutkan Pendidikan S3 di Telkom University.
 
-![pak fahri](https://github.com/warehousemanagement88/bukpedp3_stocksynergy/assets/147298795/ac3ad14a-49d2-4361-adfd-cb304ff9b523)
+![Pak Fachrie](https://github.com/warehousemanagement88/bukpedp3_stocksynergy/assets/147298795/0357e5d0-fc23-40a5-b5c5-01b9add5e502)
